@@ -6,7 +6,8 @@
 }
 
 .center{
-    width: 980px;
+    width: 95%;
+    max-width: 980px;
     margin: 0 auto;
     padding: 0 auto;
 }
@@ -55,17 +56,21 @@
 }
 .textinho{
     color: white;
-    width: 50%;
-    float: left;
+    text-align: center;
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
     position: relative;
     z-index: 3;
     padding-top: 110px;
 }
+
 .textinho h1{
     padding-bottom: 20px;
     font-size: xx-large;
     color: #49ADF5;
 }
+
 .titulo-servicos{
     text-align: center;
     line-height: 45px;
@@ -75,97 +80,130 @@
     font-size:large;
 }
 .conteudo-servicos{
-    height: 800px;
     background-image: url("../img/background.jpg");
     background-size: cover;
-    padding-top: 50px;
+    padding: 3em 0;
+    display: block;
 }
+
+.grid-services {
+    width: 95%;
+    max-width: 980px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 30px;
+}
+
 .img-portrait{
     width: 100%;
+    margin-bottom: 30px;
 }
-.img-portrait img{
-    width: 264px;
-    height: 350px;
-    border-radius: 35px;
-    margin: 0 29px;
-}
+
 .layer-portrait{
     background-color: transparent;
-    /* background-color: black; */
+    background-size: cover;
     width: 264px;
     height: 350px;
     border-radius: 35px;
     margin: 0 29px;
-    position: absolute;
     display: inline-block;
     transition: 0.3s;
     color: transparent;
+    text-align: center;
+    overflow: hidden;
 }
+
 .layer-portrait h2{
     padding: 30px 0 20px;;
     text-align: center;
 }
+
 .layer-portrait p{
-    padding: 15px;
+    padding: 30px 15px 15px;
+    height: 100%;
 }
-.layer-portrait:hover{
-    background-color: rgba(0,0,0,0.7);
+
+.layer-portrait:hover h2, .layer-portrait:hover p,
+.layer-landscape:hover h2, .layer-landscape:hover p,
+.layer-square:hover h2, .layer-square:hover p
+ {
     color: white;
-} 
-.img-landscape{
-    height: 290px;
-    width: 588px;
-    margin: 30px 29px;
-    border-radius: 35px;
-    background-image: url("../img/carroFrente.jpg");
-    background-size: cover;
-    display: inline-block;
+    background-color: rgba(0,0,0,0.7);
 }
+
+#photo1 {
+    background-image: url('../img/carroRoda.jpg');
+}
+
+#photo2 {
+    background-image: url('../img/farolCarro.jpg');
+}
+
+#photo3 {
+    background-image: url('../img/carroOutono.jpg');
+}
+
+#photo4 {
+    background-image: url('../img/carroFrente.jpg');
+}
+
+#photo5 {
+    background-image: url('../img/carroInterior.jpg');
+}
+
 .layer-landscape{
     height: 290px;
     width: 588px;
+    display: inline-block;
     margin: 30px 29px;
     border-radius: 35px;
     background-color: transparent;
-    position: absolute;
+    background-size: cover;
     color: transparent;
+    text-align: center;
     transition: 0.3s;
+    grid-column: 1/3;
+    overflow: hidden;
 }
+
 .layer-landscape h2{
     text-align: center;
     padding: 30px 0 20px;
 }
+
 .layer-landscape p{
-    padding:15px;
+    padding:30px 15px 15px;
+    height: 100%;
 }
+
 .layer-landscape:hover{
     background-color: rgba(0,0,0,0.7);
     color: white;
    
 }
-.img-square{
-    height: 290px;
-    width: 27%;
-    margin: 30px 29px;
-    border-radius: 35px;
-}
+
 .layer-square{
     height: 290px;
     width: 265px;
-    margin: 30px 29px;
+    margin: 30px 29px;      
+    display: inline-block;
     border-radius: 35px;
     background-color:transparent;
+    background-size: cover;
     color: transparent;
-    display: inline-block;
-    position: absolute;
     transition: 0.3s;
+    overflow: hidden;
 }
 .layer-square h2{
     text-align: center;
     padding: 20px 0 10px;
 }
 .layer-square p{
-    padding: 15px;
+    padding:30px 15px 15px;
+    height: 100%;
 }
 .layer-square:hover{
     background-color: rgba(0,0,0,0.6);
@@ -182,6 +220,7 @@
     float: left;
     color: #49ADF5;
     padding: 90px 0 50px;
+    text-align: center;
 }
 .w50 h2{
     padding-bottom: 15px;
@@ -203,4 +242,42 @@
     height: 30px;
     width: 100%;
     display: inline-block;
+}
+
+@media only screen and (max-width: 1010px) {
+    .grid-services {
+        width: 80%;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 30px;
+        column-gap: 20px;
+    }
+
+    .layer-portrait {
+        margin: auto auto;
+    }
+
+    .layer-square {
+        height: 100%;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        margin: auto auto;
+        text-align: center;
+    }
+
+    .layer-square h2{
+        padding: 30px 0 20px;;
+    }
+
+    .layer-square p {
+        padding: 30px 15px 15px;
+    }
+
+    .layer-landscape {
+        width: 95%;
+        max-width: 640px;
+        background-position: center;
+        margin: auto auto;
+    }
 }
