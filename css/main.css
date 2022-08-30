@@ -1,34 +1,42 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
     box-sizing: border-box;
     font-family: 'Roboto';
 }
 
-.center{
-    width: 95%;
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 auto;
+body {
+    margin: 0;
 }
-.inicio{
-    height: 650px;
+
+footer p {
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.inicio {
     width: 100%;
-    display: inline-block;
+    height: 100vh;
     position: relative;
+
     background-image: url('../img/porsche2.jpg');
     background-size: cover;
     background-position: center;
 }
-.layer-inicio{
+
+.layer-inicio {
     width: 100%;
-    height: 650px;
+    height: 100vh;
     position: absolute;
     background-color: rgba(0,0,0,0.7);
     display: inline-block;
     z-index: 2;
 }
-.navbar{
+
+.navbar {
     position: relative;
     display: inline-block;
     z-index: 3;
@@ -36,50 +44,63 @@
     width: 100%;
     padding-top: 40px;
 }
-.navbar h1{
+
+.navbar h1 {
     display: inline-block;
     color: #49ADF5;
     font-size: xx-large;
 }
-.navbar ul{
+
+.navbar ul {
     float: right;
     padding-top: 13px;
 }
-.navbar li{
+
+.navbar li {
     list-style: none;
     display: inline-block;
 }
-.navbar a{
+
+.navbar a {
     color: white;
     text-decoration: none;
+
     padding-left: 15px;
 }
-.textinho{
+
+.textinho {
     color: white;
-    text-align: center;
+    font-size: medium;
+    font-weight: 400;
+    line-height: 140%;
+
     width: 90%;
     max-width: 650px;
-    margin: 0 auto;
+    padding-top: 10vh;
     position: relative;
     z-index: 3;
-    padding-top: 110px;
 }
 
-.textinho h1{
+.textinho h1 {
     padding-bottom: 20px;
     font-size: xx-large;
-    color: #49ADF5;
 }
 
-.titulo-servicos{
+.titulo-servicos {
     text-align: center;
-    line-height: 45px;
     color: #49ADF5;
+
     background-color: #0B0E16;
-    height: 45px;
+    margin: 0 auto;
+    padding: 1em 0;
     font-size:large;
 }
-.conteudo-servicos{
+
+.titulo-servicos h1 {
+    margin: 0;
+}
+
+.conteudo-servicos {
     background-image: url("../img/background.jpg");
     background-size: cover;
     padding: 3em 0;
@@ -87,42 +108,41 @@
 }
 
 .grid-services {
-    width: 95%;
-    max-width: 980px;
-    margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     row-gap: 30px;
 }
 
-.img-portrait{
+.img-portrait {
     width: 100%;
     margin-bottom: 30px;
 }
 
-.layer-portrait{
+.layer-portrait {
     background-color: transparent;
     background-size: cover;
     width: 264px;
     height: 350px;
     border-radius: 35px;
-    margin: 0 29px;
+
+    margin: 2em 29px;
     display: inline-block;
-    transition: 0.3s;
+
     color: transparent;
     text-align: center;
     overflow: hidden;
 }
 
-.layer-portrait h2{
+.layer-portrait h2 {
     padding: 30px 0 20px;;
+    margin: 0;
     text-align: center;
 }
 
-.layer-portrait p{
+.layer-portrait p {
     padding: 30px 15px 15px;
+    margin: 0;
     height: 100%;
 }
 
@@ -130,6 +150,10 @@
 .layer-landscape:hover h2, .layer-landscape:hover p,
 .layer-square:hover h2, .layer-square:hover p
  {
+    transition: all .3s;
+
+    cursor: pointer;
+
     color: white;
     background-color: rgba(0,0,0,0.7);
 }
@@ -171,11 +195,13 @@
 
 .layer-landscape h2{
     text-align: center;
+    margin: 0;
     padding: 30px 0 20px;
 }
 
 .layer-landscape p{
     padding:30px 15px 15px;
+    margin: 0;
     height: 100%;
 }
 
@@ -200,9 +226,11 @@
 .layer-square h2{
     text-align: center;
     padding: 20px 0 10px;
+    margin: 0;
 }
 .layer-square p{
     padding:30px 15px 15px;
+    margin: 0;
     height: 100%;
 }
 .layer-square:hover{
@@ -214,6 +242,7 @@
     float: left;
     width: 100%;
 }
+
 .w50{
     width: 49%;
     margin: 0 3px;
@@ -222,13 +251,16 @@
     padding: 90px 0 50px;
     text-align: center;
 }
+
 .w50 h2{
     padding-bottom: 15px;
 }
+
 .w50 p{
     padding: 10px 0;
     color: white;
 }
+
 .fas, .fab{
     margin-right: 10px;
 }
@@ -246,38 +278,25 @@
 
 @media only screen and (max-width: 1010px) {
     .grid-services {
-        width: 80%;
-
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        row-gap: 30px;
-        column-gap: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
     .layer-portrait {
         margin: auto auto;
     }
 
-    .layer-square {
-        height: 100%;
-        grid-column: 2/3;
-        grid-row: 2/3;
-        margin: auto auto;
-        text-align: center;
-    }
-
-    .layer-square h2{
-        padding: 30px 0 20px;;
-    }
-
-    .layer-square p {
-        padding: 30px 15px 15px;
-    }
-
-    .layer-landscape {
-        width: 95%;
-        max-width: 640px;
+    .layer-landscape, .layer-square {
+        max-width: 95%;
         background-position: center;
         margin: auto auto;
+    }
+
+    .w50 {
+        width: 100%;
+    }
+
+    .localidade {
+        margin: 0 auto;
     }
 }
